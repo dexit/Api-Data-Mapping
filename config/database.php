@@ -63,15 +63,6 @@ return [
             ]) : [],
         ],
 
-        'test_db' => [
-          'driver' => 'mysql',
-          'host' => env('TEST_DB_HOST', '127.0.0.1'),
-          'port' => env('TEST_DB_PORT', '3306'),
-          'database' => env('TEST_DB_DATABASE','forge'),
-          'username' => env('TEST_DB_USERNAME', 'forge'),
-          'password' => env('TEST_DB_PASSWORD', ''),
-        ],
-
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
