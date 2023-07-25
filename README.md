@@ -33,3 +33,9 @@ git clone https://github.com/uozanozyildirim/api-data-mapping.git
   Give it a try? Here is the command
   ./vendor/bin/sail php artisan app:product-feed $sourceName
   $sourceName is a variable to pick which feed you would like to update or insert into your system.
+
+
+
+## Change Log
+
+https://github.com/uozanozyildirim/Api-Data-Mapping/blob/main/changeLog.md
