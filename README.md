@@ -49,10 +49,10 @@ We used the Adapter design pattern to convert the API response into our desired 
 
 Regarding SOLID principles:
 
-Single Responsibility Principle (SRP): The classes in the project have clear and single responsibilities. For example, the ApiClient class is responsible for making API calls and converting responses, while the ProductController class handles HTTP requests related to products.
+Single Responsibility Principle (SRP): The classes in the project have clear and single responsibilities. For example, the ApiClient class is responsible for making API calls and converting responses.
 Open/Closed Principle (OCP): The code seems to be open for extension and closed for modification. We can easily add support for new API sources or formats without modifying the existing code.
 Liskov Substitution Principle (LSP): The code appears to follow LSP as there are no apparent issues with substituting derived classes for their base classes.
-Interface Segregation Principle (ISP): Since we don't have large interfaces, we don't violate ISP. Each class implements only the methods it needs.
+Interface Segregation Principle (ISP): Since we don't have large interfaces, we don't violate ISP. Each class implements only the methods it needs but for the add more Sources this source.php should have implement to SourceInterface.
 Dependency Inversion Principle (DIP): The code adheres to DIP by depending on abstractions rather than concrete implementations. For instance, the ApiClient class depends on the ClientInterface rather than a specific HTTP client library.
 Regarding Clean Code:
 
