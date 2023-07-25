@@ -31,52 +31,23 @@ use GuzzleHttp\Client;
       * @param string $url
       * @return array
       */
-    public function getApiResponse($url)
-    {
-        $response = $this->client->get($url);
-        return json_decode($response->getBody(), true);
-    }
-
-
-
-
-     /**
-      * getApiResponseAndContentType function
-      */
-     /**
-      * get api response and content type from url
-      * return the array of response and content type
-      * @param string $url
-      * @return array
-      */
-
-     public function getApiResponseAndContentType($url)
+     public function getApiResponse($url)
      {
          $response = $this->client->get($url);
+         $contentType = $response->getHeaderLine('Content-Type');
 
-         $data = [];
-         $data['body']         = json_decode($response->getBody(), true);
-         $data['content_type'] = $response->getHeader('Content-Type');
-
-         // Content-Type başlık değerini alırken, genellikle bir dizi olarak döner
-         // Çünkü birden fazla başlık olabilir. Bu nedenle ilk elemanı alıyoruz.
-         // write this in english please
-         //
-
-
-         $contentType = isset($data['content_type'][0]) ? $data['content_type'][0] : '';
-
+         // Check the content type to determine how to handle the response
          if (strpos($contentType, 'application/json') !== false) {
-             $data['content_type'] = 'json';
+             // JSON response
+             return $response->getBody();
          } elseif (strpos($contentType, 'application/xml') !== false) {
-
-             $data['content_type'] = 'xml';
+             // XML response
+             $xmlString = $response->getBody()->getContents();
+             return $xmlString;
          } else {
-            return 'This Content Type is not supported';
+             // Unsupported content type
+             throw new \Exception('Unsupported content type: ' . $contentType);
          }
-
-         return $data;
      }
-
 }
 ?>

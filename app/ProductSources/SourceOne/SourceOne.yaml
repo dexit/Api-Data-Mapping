@@ -1,5 +1,4 @@
 products:
-
   - api_field: product_name
     model_field: name
 
@@ -11,9 +10,8 @@ products:
 
   - api_field: created_at
     model_field: created_at
+    is_timestamp: true
 
   - api_field: updated_at
     model_field: updated_at
-
-
-
+    is_timestamp: true

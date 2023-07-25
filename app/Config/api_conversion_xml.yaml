@@ -1,6 +1,0 @@
-products:
-  - api_field: product_id
-    model_field: api_id
-
-  - api_field: product_name
-    model_field: name

@@ -1,0 +1,17 @@
+products:
+  - api_field: product_name
+    model_field: name
+
+  - api_field: product_quantity
+    model_field: quantity
+
+  - api_field: product_price
+    model_field: price
+
+  - api_field: created_at
+    model_field: created_at
+    is_timestamp: true
+
+  - api_field: updated_at
+    model_field: updated_at
+    is_timestamp: true
