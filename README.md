@@ -26,7 +26,10 @@ git clone https://github.com/uozanozyildirim/api-data-mapping.git
 
 3. Migrate the project
    ./vendor/bin/sail php artisan migrate
-   
+
+## How to run the tests?
+
+    use ./vendor/bin/sail php test to see failing and passing tests
 
 ## How to Use Product Feeder?
   We have created an command to handle multiple api sources by using only one command. 
