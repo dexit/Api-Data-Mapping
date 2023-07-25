@@ -29,7 +29,11 @@ git clone https://github.com/uozanozyildirim/api-data-mapping.git
 
 ## How to run the tests?
 
-    use ./vendor/bin/sail php test to see failing and passing tests
+    use 
+
+    ./vendor/bin/sail php test
+    
+    To see failing and passing tests
 
 ## How to Use Product Feeder?
   We have created an command to handle multiple api sources by using only one command. 
